@@ -1,0 +1,12 @@
+ CC=g++
+CFLAGS=-std=c++11 -Wall
+OPENCV=`pkg-config --cflags --libs opencv4`
+OMPFLAGS=-fopenmp
+
+all: CodigoOpenMP
+
+CodigoOpenMP: CodigoOpenMP.cpp
+	$(CC) $(CFLAGS) $(OMPFLAGS) -o CodigoOpenMP CodigoOpenMP.cpp $(OPENCV)
+
+clean:
+	rm -f CodigoOpenMP

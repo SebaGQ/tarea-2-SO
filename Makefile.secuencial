@@ -1,0 +1,11 @@
+CC=g++
+CFLAGS=-std=c++11 -Wall
+OPENCV=`pkg-config --cflags --libs opencv4`
+
+all: CodigoSecuencial
+
+CodigoSecuencial: CodigoSecuencial.cpp
+	$(CC) $(CFLAGS) -o CodigoSecuencial CodigoSecuencial.cpp $(OPENCV)
+
+clean:
+	rm -f CodigoSecuencial
