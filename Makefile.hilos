@@ -1,0 +1,11 @@
+CC=g++
+CFLAGS=-std=c++11 -Wall
+OPENCV=`pkg-config --cflags --libs opencv4`
+
+all: CodigoHilos
+
+CodigoHilos: CodigoHilos.cpp
+	$(CC) $(CFLAGS) -o CodigoHilos CodigoHilos.cpp -lpthread $(OPENCV)
+
+clean:
+	rm -f CodigoHilos
